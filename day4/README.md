@@ -1,3 +1,4 @@
+# Day 4
 Design and verify a 8-bit ALU which supports the following encoded operations:
 
 Encoding	Operation	Comment
