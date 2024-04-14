@@ -7,6 +7,6 @@ module Mux (
   output  wire [7:0]    y_o
 );
 
-  assign y_o = sel_i ? b_i : a_i; 
+  assign y_o = sel_i ? b_i : a_i;
 
 endmodule

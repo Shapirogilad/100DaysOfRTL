@@ -1,6 +1,19 @@
 // DFF TB
 
 module Different_DFF_tb ();
+
+  // Comparison Function Definition
+  function automatic Compare_values(string msg, logic exp, logic act);
+    begin
+      // Perform Comparison
+      if(exp != act) begin
+        $display("Error in %s Exp 0x%h Act 0x%h",msg, exp, act);
+        return 1;
+      end
+      return 0;
+    end
+  endfunction
+  
   logic clk;
   logic reset;
   
@@ -18,6 +31,22 @@ module Different_DFF_tb ();
     .q_syncrst_o(q_syncrst_o),
     .q_asyncrst_o(q_asyncrst_o)
   );
+
+  logic exp_norst;
+  logic exp_syncrst;
+  logic exp_asyncrst;
+
+  logic reset_vec [0:3] = {1'b0, 1'b0, 1'b1, 1'b1};
+  logic d_i_vec [0:3] = {1'b0, 1'b1, 1'b0, 1'b1};
+
+  logic flag1;
+  logic flag2;
+  logic flag3;
+
+  // Exp calculation
+  assign exp_norst = d_i;
+  assign exp_syncrst = (reset) ? 1'b0 : d_i;
+  assign exp_asyncrst = (reset) ? d_i : 1'b0;
   
   //Generate clk
   always begin
@@ -29,25 +58,17 @@ module Different_DFF_tb ();
   
   //Start testing
   initial begin
-    reset = 1'b1;
-    d_i = 1'b0;
-    @(posedge clk); //waiting for the clk to rise
-    
-    reset = 1'b0;
-    @(posedge clk);
-    
-    d_i = 1'b1;
-    @(posedge clk);
-    @(posedge clk);
-    @(negedge clk);
-    
-    reset = 1'b1;
-    @(posedge clk);
-    @(posedge clk);
-    
-    reset = 1'b0;
-    @(posedge clk);
-    @(posedge clk);
+    for(int i=0; i<4; i++) begin
+      reset = reset_vec[i];
+      d_i = d_i_vec[i];
+      @(posedge clk);
+      flag1 = Compare_values("no rst", exp_norst, q_norst_o);
+      flag2 = Compare_values("sync rst", exp_syncrst, q_syncrst_o);
+      flag3 = Compare_values("async rst", exp_asyncrst, q_asyncrst_o);
+      if(!flag1 & !flag2 & !flag3) begin
+        $display("Test %0d passed!",(i+1));
+      end
+    end
     $finish();
   end
 endmodule

@@ -21,7 +21,7 @@ module Different_DFF (
   always@(posedge clk or posedge reset)
     begin
       if(reset)
-        q_syncrst_o <= 0;
+        q_syncrst_o <= 1'b0;
       else
         q_syncrst_o <= d_i;
     end
@@ -29,7 +29,7 @@ module Different_DFF (
   always@(posedge clk or negedge reset)
     begin
       if(~reset)
-        q_asyncrst_o <= 0;
+        q_asyncrst_o <= 1'b0;
       else
         q_asyncrst_o <= d_i;
     end

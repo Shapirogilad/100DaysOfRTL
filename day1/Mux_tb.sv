@@ -14,6 +14,10 @@ module Mux_tb ();
     .y_o(y_o)
   );
 
+  logic [7:0] exp;
+  logic flag = 1'b0;
+
+  
   
   initial begin
     for(int i=0; i < 10; i++) begin
@@ -21,6 +25,14 @@ module Mux_tb ();
       b_i = $urandom_range (0,8'hFF);
       sel_i = $urandom_range (0,1);
       #5;
+      assign exp = sel_i ? b_i : a_i;
+      if(exp != y_o) begin
+        $display("Error! Exp 0x%h Act 0x%h", exp, y_o);
+        flag = 1'b1;
+      end
+    end
+    if(flag == 1'b0) begin
+      $display("Test passed!");
     end
     $finish();
   end
