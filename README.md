@@ -1,5 +1,5 @@
 # 100 Days Of RTL
-This project was created by Rahul Behl, who for a 100 days documented his work, what he learned and has an organized repository on GitHub.
+This project was created by Rahul Behl, who for 100 days documented his work, what he learned and has an organized repository on GitHub.
 
 Each day has a task, an orderly specification, including script tests, UVM simulations and even some formal assertions. 
 
