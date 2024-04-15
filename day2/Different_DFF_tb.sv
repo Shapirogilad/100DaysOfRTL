@@ -6,7 +6,7 @@ module Different_DFF_tb ();
   function automatic Compare_values(string msg, logic exp, logic act);
     begin
       // Perform Comparison
-      if(exp != act) begin
+      if(exp !== act) begin
         $display("Error in %s Exp 0x%h Act 0x%h",msg, exp, act);
         return 1;
       end
@@ -46,7 +46,7 @@ module Different_DFF_tb ();
   // Exp calculation
   assign exp_norst = d_i;
   assign exp_syncrst = (reset) ? 1'b0 : d_i;
-  assign exp_asyncrst = (reset) ? d_i : 1'b0;
+  assign exp_asyncrst = (reset) ? 1'b0 : d_i;
   
   //Generate clk
   always begin

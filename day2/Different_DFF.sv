@@ -18,7 +18,7 @@ module Different_DFF (
     end
   
 //flop using synchronous reset
-  always@(posedge clk or posedge reset)
+  always@(posedge clk)
     begin
       if(reset)
         q_syncrst_o <= 1'b0;
@@ -26,9 +26,9 @@ module Different_DFF (
         q_syncrst_o <= d_i;
     end
 //flop using asynchrnoous reset
-  always@(posedge clk or negedge reset)
+  always@(posedge clk or posedge reset)
     begin
-      if(~reset)
+      if(reset)
         q_asyncrst_o <= 1'b0;
       else
         q_asyncrst_o <= d_i;

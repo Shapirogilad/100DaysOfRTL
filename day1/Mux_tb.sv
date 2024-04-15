@@ -26,7 +26,7 @@ module Mux_tb ();
       sel_i = $urandom_range (0,1);
       #5;
       assign exp = sel_i ? b_i : a_i;
-      if(exp != y_o) begin
+      if(exp !== y_o) begin
         $display("Error! Exp 0x%h Act 0x%h", exp, y_o);
         flag = 1'b1;
       end
