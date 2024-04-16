@@ -32,7 +32,6 @@ module Odd_Counter_tb();
     end
 
     logic [7:0] exp_cnt;
-    logic flag;
 
     
     always@(posedge clk or posedge reset) begin
