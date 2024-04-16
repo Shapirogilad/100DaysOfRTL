@@ -2,22 +2,14 @@
 module Odd_Counter_tb();
 
 // Comparison Function Definition
-  function automatic Compare_values(string msg, logic [7:0] exp, logic [7:0] act);
+  function automatic Compare_values(string msg, logic [7:0] exp, logic [7:0] act, int num_test);
     begin
       // Perform Comparison
       if(exp !== act) begin
-        $display("Error in %s Exp 0x%h Act 0x%h",msg, exp, act);
+        $display("Error in %s Exp 0x%b Act 0x%b",msg, exp, act);
         return 1;
       end
-      return 0;
-    end
-  endfunction
-
-  function automatic Test_check(logic flag, int num_test);
-    begin
-      if(!flag) begin
-        $display("Test %0d passed!", num_test);
-      end
+      $display("Test %0d passed!", num_test);
     end
   endfunction
 
@@ -54,14 +46,12 @@ module Odd_Counter_tb();
 initial begin
     reset <= 1'b1;
     @(posedge clk);
-    flag = Compare_values("Compare", exp_cnt, cnt_o);
-    Test_check(flag, 1);
+    Compare_values("Compare", exp_cnt, cnt_o, 1);
 
     reset <= 1'b0;
-    for(int i = 0; i<128 ; i++) begin
+    for(int i = 2; i<130 ; i++) begin
         @(posedge clk)
-        flag = Compare_values("Compare", exp_cnt, cnt_o);
-        Test_check(flag, (i+2));
+        Compare_values("Compare", exp_cnt, cnt_o, i);
     end
     $finish();
 end

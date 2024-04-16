@@ -1,23 +1,15 @@
 //LFSR tb
 module LFSR_tb ();
 
-// Comparison Function Definition
-  function automatic Compare_values(string msg, logic [3:0] exp, logic [3:0] act);
+  // Comparison Function Definition
+  function automatic Compare_values(string msg, logic [3:0] exp, logic [3:0] act, int num_test);
     begin
       // Perform Comparison
       if(exp !== act) begin
-        $display("Error in %s Exp 0x%h Act 0x%h",msg, exp, act);
+        $display("Error in %s Exp 0x%b Act 0x%b",msg, exp, act);
         return 1;
       end
-      return 0;
-    end
-  endfunction
-
-  function automatic void Test_check(logic flag, int num_test);
-    begin
-      if(!flag) begin
-        $display("Test %0d passed!", num_test);
-      end
+      $display("Test %0d passed!", num_test);
     end
   endfunction
 
@@ -54,13 +46,13 @@ end
 initial begin
     reset <= 1'b1;
     @(posedge clk);
-    Test_check(Compare_values("LFSR", exp, lfsr_o),1);
+    Compare_values("LFSR", exp, lfsr_o,1);
 
 
     reset <= 1'b0;
-    for(int i=0; i<10; i++) begin
+    for(int i=2; i<34; i++) begin
         @(posedge clk);
-        Test_check(Compare_values("LFSR", exp, lfsr_o),(i+2));
+        Compare_values("LFSR", exp, lfsr_o,i);
     end
     $finish();
 end
