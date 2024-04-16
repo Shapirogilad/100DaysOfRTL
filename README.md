@@ -6,3 +6,7 @@ Each day has a task, an orderly specification, including script tests, UVM simul
 The final product is amazing - a small and simple RISC-V processor that I implemented myself.
 
 The assignments are gradual and each stage makes use of the tools I have acquired so far.
+
+In this project I slightly upgraded the tb files, instead of generating Regular tests, I performed automatic tests that give an indication if the component works or not without looking at the waveform.
+
+The tests also give an indication of where the run failed and what we expected to receive compared to what we actually received.
