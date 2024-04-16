@@ -6,7 +6,7 @@ module Odd_Counter_tb();
     begin
       // Perform Comparison
       if(exp !== act) begin
-        $display("Error in %s Exp 0x%b Act 0x%b",msg, exp, act);
+        $display("Error in %s Exp 0x%h Act 0x%h",msg, exp, act);
         return 1;
       end
       $display("Test %0d passed!", num_test);

@@ -6,7 +6,7 @@ module Binary_to_Gray_Converter_tb();
     begin
       // Perform Comparison
       if(exp !== act) begin
-        $display("Error in %s Exp 0x%b Act 0x%b",msg, exp, act);
+        $display("Error in %s Exp %b Act %b",msg, exp, act);
         return 1;
       end
       $display("Test %0d passed!", num_test);
