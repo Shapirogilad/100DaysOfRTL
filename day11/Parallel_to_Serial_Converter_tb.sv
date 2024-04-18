@@ -64,7 +64,7 @@ logic [3:0] next_shift;
 
 always_ff@(posedge clk or posedge reset) begin
     if(reset)
-        shift_ff <= 3'h0;
+        shift_ff <= 4'h0;
     else
         shift_ff <= next_shift;
 end
