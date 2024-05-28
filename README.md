@@ -9,4 +9,4 @@ The assignments are gradual and each stage makes use of the tools I have acquire
 
 In this project I slightly upgraded the tb files, instead of generating Regular tests, I performed automatic tests that give an indication if the component works or not without looking at the waveform.
 
-The tests also give an indication of where the run failed and what we expected to receive compared to what we actually received.
+The tests also give a color-coded indication of where the run failed and what we expected to receive compared to what we actually received.
