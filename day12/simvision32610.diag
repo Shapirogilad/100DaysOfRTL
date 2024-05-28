@@ -1,0 +1,88 @@
+*** Message Type: info ***
+When: Tue May 28 02:05:58 PM UTC 2024
+SimVision started.
+Version: TOOL:  simvision(64)   21.09-s007
+User: giliro33
+Host: ip-10-0-126-250.eu-central-1.compute.internal
+Platform: Linux/x86_64/4.14.336-255.557.amzn2.x86_64
+Started: Tue May 28 02:05:58 PM UTC 2024
+Command: /apps/cadence/XCELIUM/21.09.007/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:ip-10-0-126-250.eu-central-1.compute.internal:57901 -64BIT -nocopyright
+Work Directory: /data/home/giliro33/Desktop/100DaysOfRTL/day12
+ 
+*** Message Type: info ***
+When: Tue May 28 02:05:59 PM UTC 2024
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Tue May 28 02:06:00 PM UTC 2024
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Tue May 28 02:06:02 PM UTC 2024
+Connect to Simulator
+      Design: worklib.Sequence_Detector_tb:sv
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:    xmsim(64)       21.09-s007
+        User: giliro33
+        Host: ip-10-0-126-250.eu-central-1.compute.internal
+Time Started: Tue May 28 02:05:56 PM UTC 2024
+  Process ID: 32590
+   Directory: /data/home/giliro33/Desktop/100DaysOfRTL/day12
+     Command: xrun -debug Sequence_Detector_tb.sv Sequence_Detector.sv -gui
+
+ 
+*** Message Type: info ***
+When: Tue May 28 02:06:02 PM UTC 2024
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Tue May 28 02:06:07 PM UTC 2024
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Tue May 28 02:10:09 PM UTC 2024
+Exit XM-Sim: user
+      Design: worklib.Sequence_Detector_tb:sv
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:    xmsim(64)       21.09-s007
+        User: giliro33
+        Host: ip-10-0-126-250.eu-central-1.compute.internal
+Time Started: Tue May 28 02:05:56 PM UTC 2024
+  Process ID: 32590
+   Directory: /data/home/giliro33/Desktop/100DaysOfRTL/day12
+     Command: xrun -debug Sequence_Detector_tb.sv Sequence_Detector.sv -gui
+
+ 
+*** Message Type: error ***
+When: Tue May 28 02:10:09 PM UTC 2024
+XM-Sim Crashed:
+      Design: worklib.Sequence_Detector_tb:sv
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:    xmsim(64)       21.09-s007
+        User: giliro33
+        Host: ip-10-0-126-250.eu-central-1.compute.internal
+Time Started: Tue May 28 02:05:56 PM UTC 2024
+  Process ID: 32590
+   Directory: /data/home/giliro33/Desktop/100DaysOfRTL/day12
+     Command: xrun -debug Sequence_Detector_tb.sv Sequence_Detector.sv -gui
+      Design: worklib.Sequence_Detector_tb:sv
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       21.09-s007
+        User: giliro33
+        Host: ip-10-0-126-250.eu-central-1.compute.internal
+Time Started: Tue May 28 02:05:56 PM UTC 2024
+  Process ID: 32590
+   Directory: /data/home/giliro33/Desktop/100DaysOfRTL/day12
+     Command: xrun -debug Sequence_Detector_tb.sv Sequence_Detector.sv -gui
+
+Outstanding STRAP Requests:
+        strap::report enable out
+ 
+*** Message Type: info ***
+When: Tue May 28 02:10:11 PM UTC 2024
+SimVision Exit.
+ 
